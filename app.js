@@ -18,3 +18,8 @@ res.send('Autentique-se ou cadastre-se!')
 app.listen(port, () => {
   console.log(`Example app listening at http://localhost:${port}`)
 })
+
+
+app.get('/*', (req, res) => {
+    res.send('505!')
+})
