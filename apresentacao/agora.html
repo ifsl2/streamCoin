@@ -223,8 +223,9 @@
     }
     
     function updatePrice(nomeCrip){
-        const pricesWs1 = new WebSocket('wss://ws.coincap.io/prices?assets='+nomeCrip.toString());
-    
+        //const pricesWs1 = new WebSocket('wss://ws.coincap.io/prices?assets='+nomeCrip.toString());
+        const pricesWs1 = new WebSocket('wss://localhost:4000'.toString());
+        
         nomeCrip.forEach(function(name){
             var html = "<div class='card bg-primary col-sm-6 cards'><span id="+name+" class='card-body text-light insideCard' style='display: inline-flex;'>"+name.toUpperCase()+": &nbsp"+ "<div id="+ name+1 +">Carregando</div><div>&nbsp <a href='http://localhost:3000/info?nome="+name+"' target='_blank' class='btn btn-primary btn-sm'>Saber Mais</a></div></span></div>";
             
@@ -236,7 +237,7 @@
         
         pricesWs1.onmessage = function (msg) {
             var obj = JSON.parse(msg.data);
-            //console.log(msg.data);
+            console.log(msg.data);
             document.getElementById(Object.keys(obj)[0]+1).innerHTML = '<b>'+ Object.values(obj)[0]+ '</b>';
             
         }
