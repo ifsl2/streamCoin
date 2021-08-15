@@ -1,53 +1,45 @@
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
 <html>
-<script language="javascript">
-var name = "<%= title %>";
-console.log(name);
 
-const pricesWs1 = new WebSocket('wss://ws.coincap.io/prices?assets=bitcoin');
-const pricesWs2 = new WebSocket('wss://ws.coincap.io/prices?assets=monero');
-
-pricesWs1.onmessage = function (msg) {
-    document.getElementById("btc").innerHTML = "Bitcoin" + msg.data + "<br>";
-    //console.log(msg.data)
-}
-
-pricesWs2.onmessage = function (msg) {
-    document.getElementById("mon").innerHTML = "Monero" + msg.data + "<br>";
-    //console.log(msg.data)
-}
-
-
-function myFunction() {
-  var checkBox = document.getElementById("check");
-  var text = document.getElementById("btc");
-  if (checkBox.checked == true){
-    text.style.display = "block";
-  } else {
-     text.style.display = "none";
-  }
-}
-
-
-</script>
 <body>
 <form>
     
-    <dev id='body'>
+    <div id='body'>
         <h1>Cripto Moedas</h1>
     </div>
-    <div id='box'>
-        <label for="btc-check">Bitcoin:</label> 
-        <input type="checkbox" id="btc-check" onclick="myFunction()">
-        <label for="btc-check">Bitcoin:</label> 
-        <input type="checkbox" id="mon-check" onclick="myFunction()">
-    </div>
+    
     <div id="btc">
     </div>
     
     <div id="mon">
         
     </div>
-
 </form>
 </body>
+
+<script language="javascript">
+    
+    var nomeCrip = ['bitcoin', 'monero', 'dogecoin', 'litecoin', 'ethereum'];
+    const pricesWs1 = new WebSocket('wss://ws.coincap.io/prices?assets='+nomeCrip.toString());
+    
+    nomeCrip.forEach(function(name){
+        var html = "<div class='card'><span id="+name+" class='card-body' style='display: inline-flex;'>"+name+": &nbsp"+ "<div id="+ name+1 +"></div></span></div>";
+        
+        let div = document.createElement('div');
+        div.innerHTML = html;
+        document.getElementById('body').appendChild(div);
+        
+        //document.getElementById("body").innerHTML = name+"<br>";
+    });
+    
+    pricesWs1.onmessage = function (msg) {
+        var obj = JSON.parse(msg.data);
+        console.log(msg.data);
+        document.getElementById(Object.keys(obj)[0]+1).innerHTML = + Object.values(obj)[0];
+        var obj = JSON.parse(msg.data);
+    
+        
+        //console.log(msg.data)
+    }
+    </script>
 </html>
