@@ -1,6 +1,8 @@
 var express = require('express');
 var router = express.Router();
 
+const historyApi = require("../public/js/info");
+
 /* GET home page. */
 router.get('/', function(req, res, next) {
   res.render('index', { title: 'Express' });
@@ -21,9 +23,17 @@ router.get('/login', function(req, res, next) {
   res.render('login', { title: 'Express' });
 });
 
+/* GET info page. */
+router.get('/info', historyApi.moreAbout);
+
 /* GET login page. */
 router.get('/agora', function(req, res, next) {
   res.sendfile('agora.html', { title: 'Express'});
+});
+
+/* GET login page. */
+router.post('/notificacao', function(req, res, next) {
+    res.send(req.body);
 });
 
 

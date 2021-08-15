@@ -1,0 +1,22 @@
+doctype html
+html(lang='en')
+  head
+    title Staff Directory
+    link(rel='stylesheet' href='https://cdn.jsdelivr.net/npm/semantic-ui@2.3.3/dist/semantic.min.css')
+    style.
+      p { font-size: 15px; }
+      footer { margin: 35px 0 15px 0; text-align: center }
+  body
+    main#main
+    h1= title
+    p Descubra mais sobre o <b>#{id}</b> aqui
+    p Classificação <b>#{rank}</b>
+    p Símbolo <b>#{symbol}</b>
+    p Nome <b>#{name}</b>
+    p Oferta disponível para negociação <b>#{supply}</b>
+    p Quantidade total de ativo emitido <b>#{maxSupply}</b>
+    p Oferta x Preço <b>#{marketCapUsd}</b>
+    p Quantidade de volume de negociação representado em dólares americanos nas últimas 24 horas <b>#{volumeUsd24Hr}</b>
+    p Preço ponderado por volume com base em dados de mercado em tempo real, convertidos em dólares americanos <b>#{priceUsd}</b>
+    p A direção e a mudança de valor nas últimas 24 horas <b>#{changePercent24Hr}</b>
+    p Preço médio ponderado do volume nas últimas 24 horas <b>#{vwap24Hr}</b>

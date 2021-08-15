@@ -1,45 +1,287 @@
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
-<html>
-
-<body>
-<form>
-    
-    <div id='body'>
-        <h1>Cripto Moedas</h1>
+<div id='body'>
+    <h1 id= "title">StreamCoin</h1>
+</div>
+<form action="test" id="form">
+    <div>
+        <div class="input-group mb-3">
+            <span class="input-group-text" >Nome</span>
+            <input type="text" class="form-control" id="nome" aria-label="Sizing example input" aria-describedby="nome">
+        </div>
+        <div class="input-group mb-3">
+            <span class="input-group-text" >Email</span>
+            <input type="text" class="form-control" id="email" aria-label="Sizing example input" aria-describedby="email">
+        </div>
     </div>
-    
-    <div id="btc">
-    </div>
-    
-    <div id="mon">
+    <div>
+        <div class="form-check">
+            <input class="form-check-input" type="checkbox" value="1" id="bitcoin">
+            <label class="form-check-label" for="bitcoin">
+            Bitcoin
+            </label>
+        </div>
         
+        <div class="input-group input-group-sm mb-3" id="form_bitcoin" >
+            <span class="input-group-text" >Compra</span>
+            <input type="text" class="form-control" id="bitcoin_compra" aria-label="Sizing example input" aria-describedby="bitcoin_compra" onkeypress="return event.charCode >= 48 && event.charCode <= 57">
+            <span class="input-group-text" >Venda</span>
+            <input type="text" class="form-control" id="bitcoin_venda" aria-label="Sizing example input" aria-describedby="bitcoin_venda" onkeypress="return event.charCode >= 48 && event.charCode <= 57">
+            <span class="input-group-text" >Alerta</span>
+            <input type="text" class="form-control" id="bitcoin_alerta" aria-label="Sizing example input" aria-describedby="bitcoin_alerta" onkeypress="return event.charCode >= 48 && event.charCode <= 57">
+        </div>
     </div>
+    <div>
+        <div class="form-check">
+            <input class="form-check-input" type="checkbox" value="" id="monero">
+            <label class="form-check-label" for="monero">
+                Monero
+            </label>    
+        </div>
+
+        <div class="input-group input-group-sm mb-3" id="form_monero">
+            <span class="input-group-text" >Compra</span>
+            <input type="text" class="form-control" id="monero_compra" aria-label="Sizing example input" aria-describedby="monero_compra" onkeypress="return event.charCode >= 48 && event.charCode <= 57">
+            <span class="input-group-text" >Venda</span>
+            <input type="text" class="form-control" id="monero_venda" aria-label="Sizing example input" aria-describedby="monero_venda" onkeypress="return event.charCode >= 48 && event.charCode <= 57">
+            <span class="input-group-text" >Alerta</span>
+            <input type="text" class="form-control" id="monero_alerta"aria-label="Sizing example input" aria-describedby="monero_alerta" onkeypress="return event.charCode >= 48 && event.charCode <= 57">
+        </div>
+    </div>
+    <div>
+        <div class="form-check">
+            <input class="form-check-input" type="checkbox" value="1" id="dogecoin">
+            <label class="form-check-label" for="dogecoin">
+                Dogecoin
+            </label>
+        </div>
+        <div class="input-group input-group-sm mb-3" id="form_dogecoin">
+            <span class="input-group-text" >Compra</span>
+            <input type="text" class="form-control" id="dogecoin_compra" aria-label="Sizing example input" aria-describedby="dogecoin_compra" onkeypress="return event.charCode >= 48 && event.charCode <= 57">
+            <span class="input-group-text" >Venda</span>
+            <input type="text" class="form-control" id="dogecoin_venda" aria-label="Sizing example input" aria-describedby="dogecoin_venda" onkeypress="return event.charCode >= 48 && event.charCode <= 57">
+            <span class="input-group-text" >Alerta</span>
+            <input type="text" class="form-control" id="dogecoin_alerta" aria-label="Sizing example input" aria-describedby="dogecoin_alerta" onkeypress="return event.charCode >= 48 && event.charCode <= 57">
+        </div>
+    </div>
+    <div>
+        <div class="form-check">
+            <input class="form-check-input" type="checkbox" value="" id="litecoin">
+            <label class="form-check-label" for="litecoin">
+                Litecoin
+            </label>    
+        </div>
+        <div class="input-group input-group-sm mb-3" id="form_litecoin">
+            <span class="input-group-text" >Compra</span>
+            <input type="text" class="form-control" id="litecoin_compra" aria-label="Sizing example input" aria-describedby="litecoin_compra" onkeypress="return event.charCode >= 48 && event.charCode <= 57">
+            <span class="input-group-text" >Venda</span>
+            <input type="text" class="form-control" id="litecoin_venda" aria-label="Sizing example input" aria-describedby="litecoin_venda" onkeypress="return event.charCode >= 48 && event.charCode <= 57">
+            <span class="input-group-text" >Alerta</span>
+            <input type="text" class="form-control" id="litecoin_alerta" aria-label="Sizing example input" aria-describedby="litecoin_alerta" onkeypress="return event.charCode >= 48 && event.charCode <= 57">
+        </div>
+    </div>
+    <div>
+        <div class="form-check">
+            <input class="form-check-input" type="checkbox" value="" id="ethereum">
+            <label class="form-check-label" for="ethereum">
+                Ethereum
+            </label>    
+        </div>
+
+        <div class="input-group input-group-sm mb-3" id="form_ethereum">
+            <span class="input-group-text" >Compra</span>
+            <input type="text" class="form-control" id="ethereum_compra"aria-label="Sizing example input" aria-describedby="ethereum_compra" onkeypress="return event.charCode >= 48 && event.charCode <= 57">
+            <span class="input-group-text" >Venda</span>
+            <input type="text" class="form-control" id="ethereum_venda" aria-label="Sizing example input" aria-describedby="ethereum_venda" onkeypress="return event.charCode >= 48 && event.charCode <= 57">
+            <span class="input-group-text" >Alerta</span>
+            <input type="text" class="form-control" id="ethereum_alerta" aria-label="Sizing example input" aria-describedby="ethereum_alerta" onkeypress="return event.charCode >= 48 && event.charCode <= 57">
+        </div>
+    </div>
+    
+    <button type="button" class="btn btn-primary btn-sm" onclick="selectCrip()">Prosseguir</button>
+    
 </form>
-</body>
+
+
+<script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js" integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js" integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1" crossorigin="anonymous"></script>
 
 <script language="javascript">
     
-    var nomeCrip = ['bitcoin', 'monero', 'dogecoin', 'litecoin', 'ethereum'];
-    const pricesWs1 = new WebSocket('wss://ws.coincap.io/prices?assets='+nomeCrip.toString());
-    
-    nomeCrip.forEach(function(name){
-        var html = "<div class='card'><span id="+name+" class='card-body' style='display: inline-flex;'>"+name+": &nbsp"+ "<div id="+ name+1 +"></div></span></div>";
+
+
+    var nomeCrip = [];
+    function selectCrip(){
+        let nome =document.getElementById("nome");
+        let email =document.getElementById("email");
+        if(nome.value == "" || email.value == "" ){
+            window.alert("Preencha os campos de nome e email"); 
+            return false;
+        }
+
+        var notificacao = new Object();
+        notificacao.nome = nome.value;
+        notificacao.email = email.value;
+        if(document.getElementById("bitcoin").checked){
+            var bitcoinNot = new Object();
+            nomeCrip.push('bitcoin');
+            
+            if(!document.getElementById("bitcoin_compra").value == ""){
+                bitcoinNot.compra = document.getElementById("bitcoin_compra").value;
+            }
+            if(!document.getElementById("bitcoin_venda").value == ""){
+                bitcoinNot.venda = document.getElementById("bitcoin_venda").value;
+            }
+            if(!document.getElementById("bitcoin_alerta").value == ""){
+                bitcoinNot.alerta = document.getElementById("bitcoin_alerta").value;
+            }
+            
+
+            notificacao.bitcoin = bitcoinNot;
+        }
+        if(document.getElementById("monero").checked){
+            var moneroNot = new Object();
+            nomeCrip.push('monero');
+
+            if(!document.getElementById("monero_compra").value == ""){
+                moneroNot.compra = document.getElementById("monero_compra").value;
+            }
+            if(!document.getElementById("monero_venda").value == ""){
+                moneroNot.venda = document.getElementById("monero_venda").value;
+            }
+            if(!document.getElementById("monero_alerta").value == ""){
+                moneroNot.alerta = document.getElementById("monero_alerta").value;
+            }
+
+            notificacao.monero = moneroNot;
+        }
+        if(document.getElementById("dogecoin").checked){
+            var dogecoinNot = new Object();
+            nomeCrip.push('dogecoin');
+
+            if(!document.getElementById("dogecoin_compra").value == ""){
+                dogecoinNot.compra = document.getElementById("dogecoin_compra").value;
+            }
+            if(!document.getElementById("dogecoin_venda").value == ""){
+                dogecoinNot.venda = document.getElementById("dogecoin_venda").value;
+            }
+            if(!document.getElementById("dogecoin_alerta").value == ""){
+                dogecoinNot.alerta = document.getElementById("dogecoin_alerta").value;
+            }
+
+            notificacao.dogecoin = dogecoinNot;
+        }
+        if(document.getElementById("litecoin").checked){
+            var litecoinNot = new Object();
+            nomeCrip.push('litecoin');
+
+            if(!document.getElementById("litecoin_compra").value == ""){
+                litecoinNot.compra = document.getElementById("litecoin_compra").value;
+            }
+            if(!document.getElementById("litecoin_venda").value == ""){
+                litecoinNot.venda = document.getElementById("litecoin_venda").value;
+            }
+            if(!document.getElementById("litecoin_alerta").value == ""){
+                litecoinNot.alerta = document.getElementById("litecoin_alerta").value;
+            }
+
+            notificacao.litecoin = litecoinNot;
+        }
+        if(document.getElementById("ethereum").checked){
+            var ethereumNot = new Object();
+            nomeCrip.push('ethereum');
+
+            if(!document.getElementById("ethereum_compra").value == ""){
+                ethereumNot.compra = document.getElementById("ethereum_compra").value;
+            }
+            if(!document.getElementById("ethereum_venda").value == ""){
+                ethereumNot.venda = document.getElementById("ethereum_venda").value;
+            }
+            if(!document.getElementById("ethereum_alerta").value == ""){
+                ethereumNot.alerta = document.getElementById("ethereum_alerta").value;
+            }
+
+            notificacao.ethereum = ethereumNot;
+        }
+        console.log(JSON.stringify(notificacao));
         
-        let div = document.createElement('div');
-        div.innerHTML = html;
-        document.getElementById('body').appendChild(div);
+        $.ajax({
+            method: "POST",
+            url: "http://localhost:3000/notificacao",
+            contentType : 'application/json',
+            dataType : 'json',
+            data: JSON.stringify(notificacao),
+        }).done(function(res) {
+            console.log(res)
+        });
+
+        document.getElementById("form").style.display = "none";
+        updatePrice(nomeCrip)
         
-        //document.getElementById("body").innerHTML = name+"<br>";
-    });
-    
-    pricesWs1.onmessage = function (msg) {
-        var obj = JSON.parse(msg.data);
-        console.log(msg.data);
-        document.getElementById(Object.keys(obj)[0]+1).innerHTML = + Object.values(obj)[0];
-        var obj = JSON.parse(msg.data);
-    
-        
-        //console.log(msg.data)
     }
-    </script>
-</html>
+    
+    function updatePrice(nomeCrip){
+        const pricesWs1 = new WebSocket('wss://ws.coincap.io/prices?assets='+nomeCrip.toString());
+    
+        nomeCrip.forEach(function(name){
+            var html = "<div class='card bg-primary col-sm-6 cards'><span id="+name+" class='card-body text-light insideCard' style='display: inline-flex;'>"+name.toUpperCase()+": &nbsp"+ "<div id="+ name+1 +">Carregando</div><div>&nbsp <a href='http://localhost:3000/info?nome="+name+"' target='_blank' class='btn btn-primary btn-sm'>Saber Mais</a></div></span></div>";
+            
+            let div = document.createElement('div');
+            div.innerHTML = html;
+            document.getElementById('body').appendChild(div);
+            
+        });
+        
+        pricesWs1.onmessage = function (msg) {
+            var obj = JSON.parse(msg.data);
+            //console.log(msg.data);
+            document.getElementById(Object.keys(obj)[0]+1).innerHTML = '<b>'+ Object.values(obj)[0]+ '</b>';
+            
+        }
+    }
+
+    $("#bitcoin").change(function() {
+        $('#form_bitcoin').toggle();
+    });
+    $("#monero").change(function() {
+        $('#form_monero').toggle();
+    });
+    $("#dogecoin").change(function() {
+        $('#form_dogecoin').toggle();
+    });
+    $("#litecoin").change(function() {
+        $('#form_litecoin').toggle();
+    });
+    $("#ethereum").change(function() {
+        $('#form_ethereum').toggle();
+    });
+
+    $("#bitcoin").trigger("change");
+    $("#monero").trigger("change");
+    $("#dogecoin").trigger("change");
+    $("#litecoin").trigger("change");
+    $("#ethereum").trigger("change");
+</script>
+
+<style>
+    #body{
+        text-align: -webkit-center;
+    }
+
+    #title{
+        background-color: #0b5ed7;
+        color: white;
+    }
+
+    .cards{
+        margin-bottom: 20;
+        box-shadow: 2px 2px 4px lightgrey;
+    }
+
+    .insideCard{
+        align-items: baseline;
+        align-self: center;
+    }
+</style>
