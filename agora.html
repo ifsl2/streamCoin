@@ -1,0 +1,53 @@
+<html>
+<script language="javascript">
+var name = "<%= title %>";
+console.log(name);
+
+const pricesWs1 = new WebSocket('wss://ws.coincap.io/prices?assets=bitcoin');
+const pricesWs2 = new WebSocket('wss://ws.coincap.io/prices?assets=monero');
+
+pricesWs1.onmessage = function (msg) {
+    document.getElementById("btc").innerHTML = "Bitcoin" + msg.data + "<br>";
+    //console.log(msg.data)
+}
+
+pricesWs2.onmessage = function (msg) {
+    document.getElementById("mon").innerHTML = "Monero" + msg.data + "<br>";
+    //console.log(msg.data)
+}
+
+
+function myFunction() {
+  var checkBox = document.getElementById("check");
+  var text = document.getElementById("btc");
+  if (checkBox.checked == true){
+    text.style.display = "block";
+  } else {
+     text.style.display = "none";
+  }
+}
+
+
+</script>
+<body>
+<form>
+    
+    <dev id='body'>
+        <h1>Cripto Moedas</h1>
+    </div>
+    <div id='box'>
+        <label for="btc-check">Bitcoin:</label> 
+        <input type="checkbox" id="btc-check" onclick="myFunction()">
+        <label for="btc-check">Bitcoin:</label> 
+        <input type="checkbox" id="mon-check" onclick="myFunction()">
+    </div>
+    <div id="btc">
+    </div>
+    
+    <div id="mon">
+        
+    </div>
+
+</form>
+</body>
+</html>

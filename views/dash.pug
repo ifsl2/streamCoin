@@ -1,0 +1,9 @@
+extends layout
+
+block content
+    h1= title
+    p Welcome to #{title}
+    p Clique aqui para voltar ao inicio #{index}
+    ul
+    each val in [1, 2, 3, 4, 5]
+        li= val
