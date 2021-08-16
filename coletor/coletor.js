@@ -7,7 +7,7 @@ const rl = readline.createInterface({
 const server = new WebSocket('ws://localhost:4000')
 
 //Ao final, adicionar mais moedas, trade etc. levar em consideração 
-const pricesWs = new WebSocket('wss://ws.coincap.io/prices?assets=bitcoin')
+const pricesWs = new WebSocket('wss://ws.coincap.io/prices?assets=bitcoin,ethereum,monero,litecoin,dogecoin')
 
 
 server.onopen = function() {

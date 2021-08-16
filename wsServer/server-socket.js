@@ -10,12 +10,28 @@ const WebSocketServer = require('ws')
 const wss = new WebSocketServer.Server({port: 4000}) 
 
 let sockets = []
-wss.on('connection', function(socket) {
-  sockets.push(socket)
-  console.log('Conexão com o coletor realizada com sucesso')
+wss.on('connection', function(socket, req) {
+  sockets.push(socket);
+  console.log('Conexão com o coletor realizada com sucesso');
+  
+  
+  var myarr = req.url.split("/?assets=");
+  
+  if(myarr[1]){
+    arrayCript = myarr[1].split(",");
+  }
+  
   
   socket.on('message', function incoming(message) {
-    console.log(message.toString())
+    var obj = JSON.parse(message.toString());
+    if(typeof arrayCript !== 'undefined'){
+      if(arrayCript.includes(Object.keys(obj)[0])){
+        sockets.forEach(s => s.send(message.toString()))
+      }
+    }else{
+      console.log(message.toString());
+    }
+    
   })
 
   socket.on('close', function() {
