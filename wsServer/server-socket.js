@@ -10,8 +10,10 @@ const WebSocketServer = require('ws')
 const wss = new WebSocketServer.Server({port: 4000}) 
 
 let sockets = []
+let id = [];
 wss.on('connection', function(socket, req) {
   sockets.push(socket);
+  id.push(req.socket.remoteAddress);
   console.log('Conexão com o coletor realizada com sucesso');
   
   
@@ -24,14 +26,7 @@ wss.on('connection', function(socket, req) {
   
   socket.on('message', function incoming(message) {
     var obj = JSON.parse(message.toString());
-    if(typeof arrayCript !== 'undefined'){
-      if(arrayCript.includes(Object.keys(obj)[0])){
-        sockets.forEach(s => s.send(message.toString()))
-      }
-    }else{
-      console.log(message.toString());
-    }
-    
+      sockets.forEach(s => s.send(message.toString()))
   })
 
   socket.on('close', function() {
